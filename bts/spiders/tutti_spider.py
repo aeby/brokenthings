@@ -28,5 +28,6 @@ class TuttiSpider(BaseSpider):
             item['link'] = first_value(site.xpath('a[1]/@href').extract())
             item['desc'] = first_value(site.xpath('a/div/p/text()').extract())
             item['price'] = first_value(site.xpath('a/span/strong/text()').extract()).replace('\'', '')
+            item['source'] = self.name
             items.append(item)
         return items

@@ -8,7 +8,7 @@ from scrapy.item import Item, Field
 
 class BrokenItem(Item):
     title = Field()
-    link = Field()
     desc = Field()
-    source = Field()
+    link = Field()
     price = Field()
+    source = Field()

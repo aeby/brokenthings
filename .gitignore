@@ -38,3 +38,6 @@ nosetests.xml
 
 # Virtualenv
 venv
+
+# Spider store
+analyzer/store/*.json

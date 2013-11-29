@@ -20,8 +20,6 @@ class RicardoSpider(BaseSpider):
         sel = Selector(response)
         offers = sel.xpath('/html/body/div/div[1]/div/section[3]/ol/li')
 
-        #/html/body/div/div[1]/div/section[3]/ol/li[8]/div[3]/div[1]/span/span[1]
-
         items = []
         for site in offers:
             item = BrokenItem()
@@ -30,5 +28,6 @@ class RicardoSpider(BaseSpider):
             item['desc'] = first_value(site.xpath('div[2]/div/span/text()').extract(), default='-')
             item['price'] = first_value(site.xpath('div[3]/div[1]/span/span[1]/text()').extract())\
                 .split(' ')[-1].replace(',', '')
+            item['source'] = self.name
             items.append(item)
         return items
