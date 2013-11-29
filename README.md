@@ -4,7 +4,7 @@ Scrape the internets for broken things
 
 ## Prerequisites
 
-Installed [Python](http://python.org/) and [Virtualenv](http://pypi.python.org/pypi/virtualenv). See this guide for guidance.
+Installed [Python](http://python.org/) and [Virtualenv](http://pypi.python.org/pypi/virtualenv). See [this guide](http://docs.python-guide.org/en/latest/starting/install/linux/) for guidance.
 
 ## Setup
 
