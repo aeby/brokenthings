@@ -17,6 +17,10 @@ Installed [Python](http://python.org/) and [Virtualenv](http://pypi.python.org/p
 
 ## Usage
 
-    scrapy crawl tutti
-    scrapy crawl tutti -o tutti_items.json -t json
+Replace `<SPIDER_NAME>` with `tutti` or `ricardo`
 
+    scrapy crawl <SPIDER_NAME> -o analyzer/store/<SPIDER_NAME>_items.json -t json
+
+Once the json files are generated run the analyzer:
+
+    python analyzer/analyze.py
