@@ -14,6 +14,7 @@ class TuttiSpider(BaseSpider):
     allowed_domains = ["tutti.ch"]
     start_urls = [
         "http://www.tutti.ch/bern?st=s&q=defekt",
+        "http://www.tutti.ch/bern?st=s&q=kaputt",
     ]
 
     def parse(self, response):
@@ -26,6 +27,6 @@ class TuttiSpider(BaseSpider):
             item['title'] = first_value(site.xpath('a/div/h3/text()').extract())
             item['link'] = first_value(site.xpath('a[1]/@href').extract())
             item['desc'] = first_value(site.xpath('a/div/p/text()').extract())
-            item['price'] = first_value(site.xpath('a/span/strong/text()').extract())
+            item['price'] = first_value(site.xpath('a/span/strong/text()').extract()).replace('\'', '')
             items.append(item)
         return items
